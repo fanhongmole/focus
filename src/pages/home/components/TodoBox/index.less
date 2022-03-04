@@ -1,0 +1,142 @@
+.todoBox {
+  margin: 0 60px 0 40px;
+}
+
+.addTodoBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 20px;
+  font-size: 18px;
+}
+
+.listWrap {
+  height: 500px;
+  padding-left: 48px;
+  overflow-y: scroll;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  margin: 10px 10px 0 0;
+  padding: 0 20px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.checkedItem {
+  opacity: 0.4;
+}
+
+.todoItem:hover {
+  background-color: #f0f2f5;
+}
+
+.todoItem:hover .todoAction {
+  opacity: 1;
+}
+
+.todoLeft {
+  display: flex;
+  align-items: center;
+  width: 500px;
+}
+
+.todoName {
+  margin-left: 50px;
+}
+
+.todoAction {
+  display: flex;
+  justify-content: center;
+  // justify-content: space-between;
+  width: 150px;
+  opacity: 0;
+  transition: 0.1s ease-in-out 0.05s;
+}
+
+/* 倒计时页面 */
+.timingPage {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+  background-color: #606060;
+  opacity: 0.9;
+  transition: 0.2s ease-in-out 0.1s;
+}
+
+.showTimingPage {
+  right: 0;
+}
+
+.timingHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+  padding-left: 8px;
+  line-height: 44px;
+}
+
+.countWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84%;
+}
+
+.countDown {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.countTime,
+.countCompleted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  color: #525252;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #ffeb3b;
+  border-radius: 8px;
+}
+
+.countTime {
+  width: 54px;
+}
+
+.countCompleted {
+  padding: 0 30px;
+}
+
+.fixCountWrap {
+  position: fixed;
+  left: 100%;
+  bottom: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 6px 0 15px;
+  color: #525252;
+  font-size: 20px;
+  background-color: #ffeb3b;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: #bbb 1px 1px 2px 0px;
+  transition: 0.2s ease-in-out 0.1s;
+}
+
+.showMiniCount {
+  left: 0;
+}

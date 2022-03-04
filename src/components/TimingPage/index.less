@@ -1,0 +1,81 @@
+.timingPage {
+  position: fixed;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+  background-color: #606060;
+  opacity: 0.9;
+  transition: 0.2s ease-in-out 0.1s;
+}
+
+.showTimingPage {
+  right: 0;
+}
+
+.timingHeader {
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 6px 0 8px;
+  line-height: 44px;
+  -webkit-app-region: drag;
+}
+
+.countWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 84%;
+}
+
+.countDown {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.countTime,
+.countCompleted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  color: #525252;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #ffeb3b;
+  border-radius: 8px;
+}
+
+.countTime {
+  width: 54px;
+}
+
+.countCompleted {
+  padding: 0 30px;
+}
+
+.fixCountWrap {
+  position: fixed;
+  left: 100%;
+  bottom: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 6px 0 15px;
+  color: #525252;
+  font-size: 20px;
+  background-color: #ffeb3b;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: #bbb 1px 1px 2px 0px;
+  transition: 0.2s ease-in-out 0.1s;
+}
+
+.showMiniCount {
+  left: 0;
+}

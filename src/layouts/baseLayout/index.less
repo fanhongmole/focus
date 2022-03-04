@@ -1,0 +1,68 @@
+/***系统主体部分***/
+.container {
+  min-height: 100vh;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+    padding-right: 6px;
+    line-height: 44px;
+    background: #fff;
+    -webkit-app-region: drag;
+  }
+
+  .content {
+    display: flex;
+    flex: auto;
+    min-height: 280px;
+    padding: 0 20px 40px 30px;
+    background: #fff;
+    & > div {
+      width: 100%;
+    }
+  }
+
+  .progressbar {
+    background-color: transparent;
+    :global {
+      .ant-menu-item:hover:not(.ant-menu-item-selected) {
+        background-color: #c0cac7;
+      }
+      .ant-menu-item {
+        border-radius: 4px;
+        span {
+          a {
+            color: #0f172aa6;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+      }
+      .ant-menu-title-content {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.timeWrap {
+  position: relative;
+  bottom: -328px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+}
+
+.timeSpan {
+  font-size: 36px;
+}
+
+.dateWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
