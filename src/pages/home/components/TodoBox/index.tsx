@@ -21,6 +21,7 @@ const TodoBox: FC<TodoBoxProps> = ({ dispatch, home }) => {
         Id: id,
         Duration: duration,
         ShowTimingPage: true,
+        ShowMiniCount: true,
         StartTime: Date.now(),
       },
     });

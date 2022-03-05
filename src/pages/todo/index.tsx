@@ -125,6 +125,7 @@ const Todolist: FC<TodoPageProps> = ({ todo, dispatch, loading }) => {
   };
 
   const initData = () => {
+    setId(0);
     setName('');
     setColor('red');
     setWeek(['1', '2', '3', '4', '5']);

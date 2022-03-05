@@ -18,7 +18,7 @@ interface TimingPageProps {
 const padTime = (_: number) => String(_).padStart(2, '0');
 
 const TimingPage: FC<TimingPageProps> = ({ dispatch, home }) => {
-  const { Id, Duration, StartTime, ShowTimingPage } = home;
+  const { Id, Duration, StartTime, ShowTimingPage, ShowMiniCount } = home;
 
   // 与Electron通信
   const minWindow = () => {
@@ -109,6 +109,7 @@ const TimingPage: FC<TimingPageProps> = ({ dispatch, home }) => {
       );
     }
   };
+
   return (
     <>
       <div
@@ -145,14 +146,14 @@ const TimingPage: FC<TimingPageProps> = ({ dispatch, home }) => {
         <div className={styles.countWrap}>
           <Countdown
             key={Id}
-            date={StartTime + 4 * 1000 * 1}
+            date={StartTime + 60 * 1000 * Duration}
             renderer={countdownRenderer}
             // onComplete={onCompleted}
           />
         </div>
       </div>
 
-      {Id ? (
+      {ShowMiniCount ? (
         <div
           className={`${styles.fixCountWrap} ${
             ShowTimingPage ? '' : styles.showMiniCount
@@ -160,7 +161,7 @@ const TimingPage: FC<TimingPageProps> = ({ dispatch, home }) => {
         >
           <Countdown
             key={Id}
-            date={StartTime + 4 * 1000 * 1}
+            date={StartTime + 60 * 1000 * Duration}
             renderer={miniCountdownRenderer}
             onComplete={onCompleted}
           />

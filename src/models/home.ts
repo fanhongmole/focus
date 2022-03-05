@@ -7,6 +7,7 @@ export interface HomeState {
   Id: number;
   Duration: number;
   ShowTimingPage: boolean;
+  ShowMiniCount: boolean;
   StartTime: number;
   Week: number;
   list: SingleTodayTodoType[];
@@ -34,6 +35,7 @@ const HomeModel: HomeModelType = {
     Id: 0,
     Duration: 0,
     ShowTimingPage: false,
+    ShowMiniCount: false,
     StartTime: Date.now(),
     Week: 0,
     list: [],
