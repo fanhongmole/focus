@@ -13,13 +13,13 @@ import {
 import ColorType from '@/components/ColorType';
 import { duration2Time } from '@/utils/utils';
 import styles from './index.less';
-import { connect, Dispatch, Loading, TodoState } from 'umi';
+import { connect, Dispatch, HomeState, TodoState } from 'umi';
 import { SingleTodoType } from './data.d';
 
 interface TodoPageProps {
   dispatch: Dispatch;
+  home: HomeState;
   todo: TodoState;
-  loading: boolean;
 }
 
 const weekOptions = [
@@ -53,7 +53,7 @@ const weekOptions = [
   },
 ];
 
-const Todolist: FC<TodoPageProps> = ({ todo, dispatch, loading }) => {
+const Todolist: FC<TodoPageProps> = ({ todo, home, dispatch }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [id, setId] = useState(0);
   const [name, setName] = useState('');
@@ -66,6 +66,7 @@ const Todolist: FC<TodoPageProps> = ({ todo, dispatch, loading }) => {
   };
 
   const fillModal = (item: SingleTodoType) => {
+    if (item.id === home.Id) return message.info('计划进行中，无法编辑');
     setId(item.id);
     setName(item.name);
     setColor(item.color);
@@ -133,6 +134,7 @@ const Todolist: FC<TodoPageProps> = ({ todo, dispatch, loading }) => {
   };
 
   const deleteTodo = (id: number) => {
+    if (id === home.Id) return message.info('计划进行中，无法删除');
     dispatch({
       type: 'todo/delTodo',
       payload: {
@@ -302,8 +304,8 @@ const Todolist: FC<TodoPageProps> = ({ todo, dispatch, loading }) => {
 };
 
 export default connect(
-  ({ todo, loading }: { todo: TodoState; loading: Loading }) => ({
+  ({ todo, home }: { todo: TodoState; home: HomeState }) => ({
     todo,
-    loading: loading.models.todo,
+    home,
   }),
 )(Todolist);
